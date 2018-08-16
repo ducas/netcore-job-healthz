@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHealthz", "JobHealthz\JobHealthz.csproj", "{A56C5325-A06B-4B76-A1D9-DC31E51FEC87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHealthz.TestConsole", "JobHealthz.TestConsole\JobHealthz.TestConsole.csproj", "{F746549F-C5D9-4C66-B4F0-835C79226651}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHealthz.SampleConsole", "JobHealthz.SampleConsole\JobHealthz.SampleConsole.csproj", "{F746549F-C5D9-4C66-B4F0-835C79226651}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

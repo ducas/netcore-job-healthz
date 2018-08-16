@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace JobHealthz.TestConsole
+namespace JobHealthz.SampleConsole
 {
     class Program
     {
