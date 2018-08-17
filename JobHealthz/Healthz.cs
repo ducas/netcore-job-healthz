@@ -20,6 +20,11 @@ namespace JobHealthz
         {
             _logger = new NullLogger<Healthz>();
         }
+
+        public void Start(IHealthCheck check)
+        {
+            Start(check.Check);
+        }
         
         public void Start(Func<HealthzResult> check)
         {
@@ -44,6 +49,11 @@ namespace JobHealthz
             var urls = string.Join(",", host.ServerFeatures.Get<IServerAddressesFeature>().Addresses);
             Console.WriteLine($"Health checks listening on {urls} at /healthz.");
         }
+    }
+
+    public interface IHealthCheck
+    {
+        HealthzResult Check();
     }
 
     public class HealthzResult

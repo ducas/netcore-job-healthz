@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHealthz", "JobHealthz\Jo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHealthz.SampleConsole", "JobHealthz.SampleConsole\JobHealthz.SampleConsole.csproj", "{F746549F-C5D9-4C66-B4F0-835C79226651}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHealthz.Tests", "JobHealthz.Tests\JobHealthz.Tests.csproj", "{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{F746549F-C5D9-4C66-B4F0-835C79226651}.Release|x64.Build.0 = Release|Any CPU
 		{F746549F-C5D9-4C66-B4F0-835C79226651}.Release|x86.ActiveCfg = Release|Any CPU
 		{F746549F-C5D9-4C66-B4F0-835C79226651}.Release|x86.Build.0 = Release|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Debug|x64.Build.0 = Debug|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Debug|x86.Build.0 = Debug|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Release|x64.ActiveCfg = Release|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Release|x64.Build.0 = Release|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Release|x86.ActiveCfg = Release|Any CPU
+		{59DF5B0C-0CCC-4A35-A0A6-08AB0D22BB77}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

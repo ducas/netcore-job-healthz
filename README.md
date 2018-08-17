@@ -27,26 +27,26 @@ This library uses Microsoft.AspNetCore.Server.Kestrel to expose a single HTTP en
 
     Health checks listening on http://localhost:5000,https://localhost:5001 at /healthz.
 
-You can change the base URL by setting the ASPNETCORE_URLS environment variable - e.g. `ASPNETCORE_URLS=http://localhost dotnet run`.
+You can change the base URL by setting the *ASPNETCORE_URLS* environment variable - e.g. `ASPNETCORE_URLS=http://localhost dotnet run`.
 
 When the /healthz endpoint is called, the callback provided will be invoked and the result translated to a HTTP response - e.g.
 
     $ curl localhost:5000/healthz -v
-	*   Trying ::1...
-	* TCP_NODELAY set
-	* Connected to localhost (::1) port 5000 (#0)
-	> GET /healthz HTTP/1.1
-	> Host: localhost:5000
-	> User-Agent: curl/7.54.0
-	> Accept: */*
-	>
-	< HTTP/1.1 200 OK
-	< Date: Thu, 16 Aug 2018 11:08:50 GMT
-	< Server: Kestrel
-	< Transfer-Encoding: chunked
-	<
-	* Connection #0 to host localhost left intact
-	Nothing to see here...
+    *   Trying ::1...
+    * TCP_NODELAY set
+    * Connected to localhost (::1) port 5000 (#0)
+    > GET /healthz HTTP/1.1
+    > Host: localhost:5000
+    > User-Agent: curl/7.54.0
+    > Accept: */*
+    >
+    < HTTP/1.1 200 OK
+    < Date: Thu, 16 Aug 2018 11:08:50 GMT
+    < Server: Kestrel
+    < Transfer-Encoding: chunked
+    <
+    * Connection #0 to host localhost left intact
+    Nothing to see here...
 
 ## Logging health checks
 
@@ -59,6 +59,19 @@ To get more visibility into the health checks, you can use Microsoft's libraries
 
     serviceProvider.GetService<Healthz>()
         .Start(() => return new HealthzResult {
-            	Status = HealthzStatus.Ok,
-            	Message = "Nothing to see here..."
+                Status = HealthzStatus.Ok,
+                Message = "Nothing to see here..."
             });;
+
+## Using IHealthCheck
+
+Another way of specifying health checks is to implement the *IHealthCheck* interface and call Healthz.Start with it. There is also an implementation of this in the library called *LastCheckpointHealthCheck* which keeps track of the last time you call *Checkpoint()* and will return an *Ok* response while it is within a threshold. E.g.
+
+    var check = new LastCheckpointHealthCheck(TimeSpan.FromMinutes(1));
+    new Healthz.Start(check);
+    while (true) {
+        // do work...
+        check.Checkpoint();
+    }
+
+If it takes longer than 1 minute between calls to *Checkpoint()* in the above snippet, the endpoint will return a *Fail* response.
